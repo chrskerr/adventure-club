@@ -3,10 +3,11 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "pnpm i && astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "pnpm run check && astro build",
     "format": "prettier '**/*.{cjs,mjs,ts,tsx,md,mdx,json,astro}' --write",
+    "check": "astro check && tsc --noEmit && prettier '**/*.{cjs,mjs,ts,tsx,md,mdx,json,astro}' --check",
     "preview": "astro preview",
     "astro": "astro"
   },
