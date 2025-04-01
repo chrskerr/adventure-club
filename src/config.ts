@@ -6,8 +6,8 @@ type Config = {
 }
 
 export default {
-  author: 'John Doe',
-  title: 'Neobrutalism blog template',
+  author: 'Kate Hobbs',
+  title: 'Adventure Club',
   description: 'Lorem ipsum dolor sit amet',
   lang: 'en',
 } satisfies Config

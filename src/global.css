@@ -22,11 +22,11 @@
 
 @theme {
   /* Colours */
-  --color-main: #ffdc58;
+  --color-main: #fd9745;
   --color-main-accent: #ffc800;
   --color-overlay: rgba(0, 0, 0, 0.8);
 
-  --color-bg: #fef2e8;
+  --color-bg: #fff4e0;
   --color-text: #000;
   --color-border: #000;
 
@@ -46,8 +46,8 @@
   --radius-base: 10px;
 
   /* Box shadows */
-  --shadow-light: '0px 4px 0px 0px #000';
-  --shadow-dark: '0px 4px 0px 0px #000';
+  --shadow-light: 4px 2px 0px 0px #000;
+  --shadow-dark: 0px 4px 0px 0px #000;
 }
 
 @custom-variant w700 {
