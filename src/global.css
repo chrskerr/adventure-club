@@ -1,5 +1,6 @@
 @import 'tailwindcss';
-
+@plugin 'tailwind-scrollbar';
+@plugin '@tailwindcss/typography';
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
@@ -19,28 +20,54 @@
   }
 }
 
-
 @theme {
-	--color-main: #FFDC58;
-	--color-main-accent: #ffc800;
-		/* --color-overlay rgba(0,0,0,0.8); */
+  /* Colours */
+  --color-main: #ffdc58;
+  --color-main-accent: #ffc800;
+  --color-overlay: rgba(0, 0, 0, 0.8);
 
-		--color-bg: #FEF2E8;
-        --color-text: #000;
-        --color-border: #000;
+  --color-bg: #fef2e8;
+  --color-text: #000;
+  --color-border: #000;
 
-        --color-dark-bg: #374151;
-        --color-dark-text: #eeefe9;
-        --color-dark-border: #000;
-        --color-secondary-black: #212121;
+  --color-dark-bg: #374151;
+  --color-dark-text: #eeefe9;
+  --color-dark-border: #000;
+  --color-secondary-black: #212121;
 
+  /* Font */
+  --font-sans:
+    'National Park', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-weight-base: 400;
+  --font-weight-heading: 600;
 
-		
+  /* Borders */
+  --radius-base: 10px;
 
+  /* Box shadows */
+  --shadow-light: '0px 4px 0px 0px #000';
+  --shadow-dark: '0px 4px 0px 0px #000';
 }
 
+@custom-variant w700 {
+  @media screen and (max-width: 700px) {
+    @slot;
+  }
+}
 
+@custom-variant w500 {
+  @media screen and (max-width: 500px) {
+    @slot;
+  }
+}
 
-	mark {
-			@apply bg-main;
-	}	
+@custom-variant w400 {
+  @media screen and (max-width: 400px) {
+    @slot;
+  }
+}
+
+mark {
+  @reference bg-main;
+}
