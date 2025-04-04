@@ -37,7 +37,7 @@
 
   /* Font */
   --font-sans:
-    'National Park', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+  'National Park', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --font-weight-base: 400;
   --font-weight-heading: 600;
