@@ -1,0 +1,52 @@
+---
+title: 'Kunanyi topper'
+description: 'Lorem ipsum dolor sit amet'
+pubDate: 'Apr 5 2025'
+tags: ['kunanyi / Wellington  Park', 'Adventure lvl: 2', 'Fitness lvl: 3']
+---
+
+## Key info
+Total kms: 24.7kms
+
+Route type: Out and back
+
+Vertical ms: 1310m ascent
+
+Terrain & time to complete: Lots of vert, lots of single track, but mostly smoothly flowing track and very runnable. Took 4 hrs for us to complete, as always stopping a few times for photos.
+
+## Summary
+We loved this route to get to the top of Kunanyi from the city centre of Hobart! There is always something amazingly satisfying about summitting a mountain by starting from the very bottom, and being rewarded with absolutely spectacular views at the top after a hard climb. 
+
+The terrain on this run was beautiful - you'll be treated with a mix of concrete paths to begin with alongside the river, beautiful single track through forest, a bit of road running towards the top of the climb, and if you're lucky some snow covered trails near the top! The views are truly outstanding and the terrain is technical but not too hectic, making for a very fun descent.
+
+## Practical information
+Start point: The start of the Hobart Rivulet Track (put in 40 Molle Street into Google Maps and you'll find it there). Note parking can be slightly tricky - the carpark next to the rivulet trail is all reserved parking so we had to find street parking. Found free all day parking on the weekend about 100m away or you can find paid parking in the city nearby very easily.
+
+Best time to complete: You'll be going HIGH. The track was snow covered even when we ran this in Early April. Be smart, check the weather conditions.
+
+Gear suggestions: Parts of the trail towards the top of the climb are very exposed so be sure to have the gear approprite for those conditions. You'll be in alpine conditions so pack smart - especially if there's wind at the top, it will be cold!
+
+Facilities: No toilets at the start. You'll run past toilets about 2kms into the run, along the rivulet track.
+
+Fees and registration: No fees. Except maybe parking depending where you end up.
+
+
+## Adventure description
+You'll see a ton throughout this adventure. Get excited for some epic views, and be sure to gear up for a long climb and a big drop in temp as you get towards the summit. We followed the trail as designed by Wilder Trails. If you want to download the GPX coordinates for this run, we recommend checking them out - for $5 it's yours!
+
+Your adventure will look something like this...
+- Slightly undulating along the river for the first few kms. You'll be running along a concrete path, normally not my favourite, but as it was a pedestrian only area, it was actually quite peaceful! No cars besides you as you tick through the easy first few kms.
+- Pass the Cascade brewery - a beautiful old building where you'll likely spot a few tourists standing around taking photos.
+- Then you're up into the trails. Mix of single track wiht a little bit of fire trail. Nothing too tehcnical at this point.
+- Then you get into more rainforest type vibes - single track again that is a bit more technical, think lots of ferns, moss, and compact dirt with tree roots. Really fun single track running - especially on the way back.
+- This is where you'll also start climbing more steeply. Fairly slow going on the way out, on the way back you'll fly through these bits!
+- Towards the top of Kunanyi you'll have about 1km running on the road - was not too busy so was OK, but was very much single file hike/run alongside the very edge of the road. So not super relaxing.
+- Then onto trail - this was super cool, when we did it, this part of the trail was covered in snow. Made it a little bit slippery, but 100% worth it for the experience of snow running.
+- Back onto the road for maybe 800m until you reach the pinnacle lookout spot. Spectacular views! Once you get there, you will see for yourself why this is such as popular toursit spot.
+- Then you'll start running back down the mountain from the other side then the way you came up. It's a nice easy path for running - mixture of steps and fairly smooth stone path.
+- We stopped in at the Lost freight cafe on our way back down the mountain - was just a little bit ouf of the way (maybe a few hundred metres) and definitley worth the hot coffee and nibble. Also got chatting to a range who was at the cafe who said the top of the mountain had been 'feels like -14!' conditions! Amazing how much warmer everything feels when you're running...
+- As you keep running back down, you will get to a point where you rejoin your path taken to get up the mountain.
+- Smooth, easy flowing downhill back in this direction. If you like single track downhill trail running, this was absolute magic.
+
+
+Overall it was hard to believe that this rugged trail exists so close to Hobart city centre. Was a great day out filled with epic views, fun novelty of snow (for us at least having just moved from QLD), and a great level of technical single track to be really fun but not so gnarly that it was super slow going.
