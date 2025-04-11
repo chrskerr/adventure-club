@@ -2,7 +2,7 @@
 title: 'Kunanyi topper'
 description: 'Lorem ipsum dolor sit amet'
 pubDate: 'Apr 5 2025'
-tags: ['kunanyi / Wellington  Park', 'Adventure lvl: 2', 'Fitness lvl: 3']
+tags: ['kunanyi', 'Adventure lvl: 2', 'Fitness lvl: 3']
 ---
 
 ## Key info

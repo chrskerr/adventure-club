@@ -2,7 +2,7 @@
 title: 'Snakes and ladders'
 description: 'Lorem ipsum dolor sit amet'
 pubDate: 'Mar 30 2025'
-tags: ['kunanyi / Wellington  Park', 'Adventure lvl: 3', 'Fitness lvl: 2']
+tags: ['kunanyi', 'Adventure lvl: 3', 'Fitness lvl: 2']
 ---
 
 ## Key info
