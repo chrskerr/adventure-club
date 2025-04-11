@@ -6,6 +6,7 @@ tags: ['kunanyi / Wellington  Park', 'Adventure lvl: 3', 'Fitness lvl: 2']
 ---
 
 ## Key info
+
 Total kms: 20.5kms
 
 Route type: Loop
@@ -15,11 +16,13 @@ Vertical ms: 1260m ascent
 Terrain & time to complete: Very technical! A lot of rock hopping, technical single track, ridgeline sections, with really only a few kms of easily runnable trail in the early stages. It took us 5 hrs to complete, stopping only a few times to take photos along the way.
 
 ## Summary
+
 This adventure turned out to be a beast! Overall kms and elevation are solid, however the real challenge to this adventure is the technical terrain. This made it slow, but also for us very very fun! If you enjoy technical trail running and a huge variety of terrain, then this adventure is definitely for you. If you are less confident with technical terrain, you'll be in for a long walk without much running. Adjust your expectations of duration accordingly and take adequate clothing, food and water.
 
 Throughout this adventure you will see it all - spectacular 360 views from the top of the major climb, river crossings, a beautiful mix of landscapes, and a few kms of rock hopping towards the end (there will be literally nothing but boulders on the side of the mountain in sight - we had never seen anything like it before, was pretty incredible).
 
 ## Practical information
+
 Start point: The Springs, Kunanyi. Right near Lost Freight Cafe. All day free parking available right near start location too.
 
 Best time to complete: You'll be getting to high elevation throughout this run and crossing ridgelines, so be sure to check the weather and the wind as you will be quite exposed in parts.
@@ -30,11 +33,12 @@ Facilities: Toilets available at parking lot at start/end. Lost Freight Cafe is 
 
 Fees and registration: No fees. No walkers log book either.
 
-
 ## Adventure description
+
 She was a big one! We tackled this route after discovering it on Wilder Trails. Wilder Trails has the GPX route available for purchase for AUD$5 for those wishing to download the route. There are a few turns along the course that are easy to miss as they are secondary trails rather than the more commonly trod routes, so the GPX file downloaded to our Garmin was a massive help.
 
 You'll go through a few distinct sections along this adventure:
+
 - Up, up, slowly up single track. The trail starts at a reasonable elevation, so you'll start to get some great views pretty much straight away!
 - Really fun single track that opens up out of the forest - you're running on compact dirt with a trench in the middle. This was super fun, it almost felt like we were parkour running, as you end up jumping off either side of the trail to avoid the trench (it's not deep, maybe 50cm, so pretty safe)
 - Wide firetrail for a few kms - the cruisiest bit of the day by far!
