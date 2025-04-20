@@ -1,0 +1,50 @@
+---
+title: 'Field of gold'
+description: 'Lorem ipsum dolor sit amet'
+pubDate: 'Apr 18 2025'
+tags: ['Mount Field National Park', 'Adventure lvl: 1', 'Fitness lvl: 2']
+---
+
+## Key info
+
+Total kms: 14 - 16kms
+
+Route type: Loop (with a few optional out and back sections)
+
+Vertical ms: 355m - 720m
+
+Terrain & time to complete: Took 3.5 hours with the extra out and backs. Technical trail, but nothing too crazy, lots of really runable sections.
+
+## Summary
+
+A nice amount of elevation change over the course of this loop - enough to reach some fantstic view points but not so much as to be super tiring. Having said that most of the run is at decent altitude, as you start at just over 1,000m elvation. This seemed to effect me quite a bit today - I was definitley felt a notable reduction to my overall energy levels, especially over the first few kms.
+
+The back half of the run was the most spectacular, with the highlights being the spectacular view points (maybe 4kms from the end) and the fagus (Nothofagus gunnii), also known as deciduous beech. They are Australia's only cold climate winter deciduous tree, drawing many visitors (including us!) to witness their vibrant autumn colors. Mount Field National Park is known for its reliable and spectacular displays of autumnal fagus, and the last few kms of this route is a fantastic display of these trees.
+
+## Practical information
+
+Start point: Lake Dobson Car Park, within Mount Field National Park. You'll need to drive about 15kms or so of narrow dirt road after you enter the National Park to get there.
+
+Best time to complete: Autumn is incredible time of year to view the famous fagus/deciduous beech trees (Australia's only cold climate winter deciduous tree). You'll be in a ski field area, so note that if you are around Winter time - check the conditions and see if it's even accessible.
+
+Gear suggestions: You're at decent altitude throughout this run, so take gear accordingly.
+
+Facilities: Toilets are available at the start and end point.
+
+Fees and registration: National Park pass. Make sure you sign in using the walkers registration book before starting the course.
+
+## Adventure description
+
+I'm sure this run is beautiful year round (except for Winter, it's a ski field, so possibly just totally inaccessible?), however we intentionally did this route late April to see the Northofagus gunnii or Fagus trees. They are Australia’s only cold climate winter-deciduous tree, and display a beautiful array of yellow, red, oranges. It's not a huge tree and grows in dense thickets with relatively small leaves.
+
+A nice adventure and really fun day out. I was caught off guard by the duration of the drive from Hobart (about an hour and 45mins) - once you enter Mount Field there's still about 30mins of driving to go. So don't do what I did and just assume you're driving to Mount Field national Park!
+
+The suggested direction of this route will ensure that you save the best for last - the best viewpoints and the display of Fagus.
+
+- You'll start from the Lake Dobson Car Park and start heading around the East side of the lake.
+- Pretty early on you will have a few optional out and backs. The first is the Platypus Tarn and the second to Lake Seal. Neither out and back is very long (about 1km total for each), however they are very slow! These out and backs will be the most technical running of the day if you choose to do them. They both lead to beautiful body of water at the end, however if you're short on time or energy, you'll still be seeing the best bits if you choose to skip these.
+- Keep running and you'll pass Lake Webster and a very, very short out and back to a hut near Twilight Tarn.
+- As you progress, you'll run across a combo of very narrow boardwalks and moderately technical trail. We did this run over Easter and it was actually really busy compared to what we are used to! Really nice to see lots of people enjoying the beautiful National Park. Please be aware as you're running that the trail is very narrow so be polite as you need to pass groups of people.
+- Maybe 4kms or so from the end you'll start climbing and reach spectacular views of the National park and bodies of water. You'll pass what is in winter time part of the ski field. Pretty crazy to imagine what this trail looks like in a few months time to be appropriate for skiing, as right now it was looking still very rugged!
+- You'll also start to pass huge amount of Fagus. Hopefully it'll be in various shades of yellow, orange and red for you too.
+- As you near the end, the last few kms will follow firetrail for a bit, then back onto single trail around the main lake, before you pop out again at the carpark.
