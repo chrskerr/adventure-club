@@ -14,12 +14,11 @@ const { src, alt, caption } = Astro.props
   class="not-prose rounded-base border-border bg-main font-base shadow-shadow w-full overflow-hidden border-2"
 >
   <Image
-    class="aspect-4/3 w-full object-cover"
     src={src}
     alt={alt}
     format="webp"
-    width={900}
-    densities={[1, 2, 3]}
+    widths={[12, 11, 10, 9, 8].map((exp) => 2 ** exp)}
+    sizes="(max-width: 900px) 100vw, 900px"
   />
   {
     !!caption && (
