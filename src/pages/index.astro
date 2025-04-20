@@ -8,11 +8,8 @@ import PostPreview from '@/components/PostPreview.astro'
 const allPosts = await getCollection('posts')
 const sortedPosts = allPosts.sort(
   (a, b) =>
-    // eslint-disable-next-line prettier/prettier
-    new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
+    new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf(),
 )
-
-console.log(sortedPosts)
 ---
 
 <Base meta={{ title: config.title }}>
