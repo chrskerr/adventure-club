@@ -4,9 +4,12 @@ import tailwindcss from '@tailwindcss/vite'
 
 import mdx from '@astrojs/mdx'
 
+import cloudflare from '@astrojs/cloudflare'
+
 // https://astro.build/config
 export default defineConfig({
   vite: { plugins: [tailwindcss()] },
   integrations: [react(), mdx()],
-  site: 'https://neobrutalism-blog.netlify.app/',
+  site: 'https://www.adventure-club.com.au/',
+  adapter: cloudflare(),
 })
