@@ -1,7 +1,7 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content'
-import Base from '@/layouts/Base.astro'
-import PostPreview from '@/components/PostPreview.astro'
+import Base from '@/layouts/base.astro'
+import PostPreview from '@/components/post_preview.astro'
 
 type Post = CollectionEntry<'posts'>
 
@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 
   return uniqueTags.map((tag: string) => {
     const filteredPosts = allPosts.filter((post: Post) =>
-      post.data.tags.includes(tag),
+      post.data.tags.includes(tag)
     )
     return {
       params: { tag },
