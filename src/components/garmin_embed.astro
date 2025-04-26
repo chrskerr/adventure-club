@@ -1,0 +1,10 @@
+---
+type Props = { src: string }
+
+const { src } = Astro.props
+---
+
+<div class="not-prose m-[-10px]">
+  <iframe src={src} width="100%" height="500px" frameborder="0" loading="lazy">
+  </iframe>
+</div>
