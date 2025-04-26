@@ -28,6 +28,14 @@ const { Content } = await render(entry)
       {entry.data.elevationGainM}m
     </li>
     <li><span class="font-bold">Type:</span> {entry.data.type}</li>
+    {
+      entry.data.gpxFile && (
+        <li>
+          <span class="font-bold">GPX File:</span>{' '}
+          <a href={entry.data.gpxFile}>Download GPX</a>
+        </li>
+      )
+    }
   </ul>
   <Content />
 </Layout>

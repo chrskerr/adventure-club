@@ -35,6 +35,9 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.1.4
         version: 4.1.4(vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2)(yaml@2.7.1))
+      '@types/leaflet-gpx':
+        specifier: ^1.3.7
+        version: 1.3.7
       '@types/react':
         specifier: ^19.1.2
         version: 19.1.2
@@ -50,6 +53,9 @@ importers:
       leaflet:
         specifier: ^1.9.4
         version: 1.9.4
+      leaflet-gpx:
+        specifier: ^2.2.0
+        version: 2.2.0
       lucide-react:
         specifier: ^0.501.0
         version: 0.501.0(react@18.3.1)
@@ -1099,6 +1105,9 @@ packages:
 
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
+
+  '@types/leaflet-gpx@1.3.7':
+    resolution: {integrity: sha512-IDshIOLZ7dUUjRiCE3DuJcAGavgUCw0xQ93dc/3YvsA6jrFc+nx8eXr0tqZIf2SaWMgqiDj/n7N24WWNh/898g==}
 
   '@types/leaflet@1.9.17':
     resolution: {integrity: sha512-IJ4K6t7I3Fh5qXbQ1uwL3CFVbCi6haW9+53oLWgdKlLP7EaS21byWFJxxqOx9y8I0AP0actXSJLVMbyvxhkUTA==}
@@ -2228,6 +2237,9 @@ packages:
   language-tags@1.0.9:
     resolution: {integrity: sha512-MbjN408fEndfiQXbFQ1vnd+1NoLDsnQW41410oQBXiyXDMYH5z505juWa4KUE1LqxRC7DgOgZDbKLxHIwm27hA==}
     engines: {node: '>=0.10'}
+
+  leaflet-gpx@2.2.0:
+    resolution: {integrity: sha512-iVUx6o0ydLn2ikYSVLuWnr0k/CDAOIUtmvQ91AI24/PXuIFIb+iEIJMHTQfvGhMCKcFrwd9ZaFYH7P/46tgGhw==}
 
   leaflet@1.9.4:
     resolution: {integrity: sha512-nxS1ynzJOmOlHp+iL3FyWqK89GtNL8U8rvlMOsQdTTssxZwCXh8N2NB3GDQOL+YR3XnWyZAxwQixURb+FA74PA==}
@@ -4601,6 +4613,10 @@ snapshots:
 
   '@types/json-schema@7.0.15': {}
 
+  '@types/leaflet-gpx@1.3.7':
+    dependencies:
+      '@types/leaflet': 1.9.17
+
   '@types/leaflet@1.9.17':
     dependencies:
       '@types/geojson': 7946.0.16
@@ -6039,6 +6055,8 @@ snapshots:
   language-tags@1.0.9:
     dependencies:
       language-subtag-registry: 0.3.23
+
+  leaflet-gpx@2.2.0: {}
 
   leaflet@1.9.4: {}
 

@@ -2,14 +2,6 @@ import L from 'leaflet'
 
 export class MapCreator {
   createMap({ targetDivId }: { targetDivId: string }): L.Map {
-    // These icons are not being copied over by the build process properly.
-    // So they were manually copy/pasted to the public folder and then hot-fixed here.
-    L.Icon.Default.mergeOptions({
-      iconRetinaUrl: '/images/marker-icon-2x.png',
-      iconUrl: '/images/marker-icon.png',
-      shadowUrl: '/images/marker-shadow.png',
-    })
-
     const map = L.map(targetDivId)
       .setMaxBounds([
         [-45, 144],

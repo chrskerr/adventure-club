@@ -3,68 +3,52 @@ import { getCollection } from 'astro:content'
 import 'leaflet/dist/leaflet.css'
 
 import Layout from '@/layouts/base.astro'
-import type { TrailData } from './_types'
+import { MapDataProvider } from '@/lib/maps/data_provider'
 
-const allTrails = await getCollection('trails')
-
-const trails = allTrails.map<TrailData>((trail) => ({
-  id: trail.id,
-  title: trail.data.title,
-  startLatLng: trail.data.startLatLng,
-}))
+const mapDataProvider = new MapDataProvider()
+const trailsCollection = await getCollection('trails')
+const serializedData = mapDataProvider.serializeData({ trailsCollection })
 ---
 
 <script>
-  import L from 'leaflet'
   import { MapCreator } from '@/lib/maps/create'
-  import type { TrailData } from './_types'
+  import { IconProvider } from '@/lib/maps/icon_provider'
+  import { MapDataProvider } from '@/lib/maps/data_provider'
+  import { MarkerProvider } from '@/lib/maps/marker_provider'
+  import { PolylineProvider } from '@/lib/maps/polyline_provider'
 
-  const mapDiv = document.getElementById('map')
-  if (mapDiv == null) {
-    throw new Error('Map div not found')
-  }
-
-  const trailsJson = mapDiv.getAttribute('data-trails')
+  const trailsJson = document.getElementById('map')?.getAttribute('data-trails')
   if (trailsJson == null) {
     throw new Error('data-trails attribute not set')
   }
 
-  const trails = JSON.parse(trailsJson) as TrailData[]
+  const mapDataProvider = new MapDataProvider()
+  const trailsData = mapDataProvider.deserializeData(trailsJson)
 
   const mapCreator = new MapCreator()
   const map = mapCreator.createMap({ targetDivId: 'map' })
 
-  let minLat = -Infinity
-  let maxLat = Infinity
-  let minLng = -Infinity
-  let maxLng = Infinity
+  const iconProvider = new IconProvider()
+  const polylineProvider = new PolylineProvider()
+  const markerProvider = new MarkerProvider(
+    trailsData,
+    map,
+    iconProvider,
+    polylineProvider,
+  )
 
-  for (const {
-    id,
-    title,
-    startLatLng: [lat, lng],
-  } of trails) {
-    minLat = Math.max(minLat, lat)
-    maxLat = Math.min(maxLat, lat)
-    minLng = Math.max(minLng, lng)
-    maxLng = Math.min(maxLng, lng)
+  const markers = markerProvider.getMarkers()
+  markers.forEach((marker) => marker.addTo(map))
 
-    L.marker([lat, lng])
-      .addTo(map)
-      .bindPopup(`<a href="/trails/${id}">${title}</a>`)
-  }
-
-  map.fitBounds([
-    [maxLat, maxLng],
-    [minLat, minLng],
-  ])
+  const bounds = markerProvider.getMarkerBounds()
+  map.fitBounds(bounds)
 </script>
 
 <Layout meta={{ title: 'All trails' }}>
   <div
     class="rounded-base -z-0 h-[500px] border-2 border-black"
     id="map"
-    data-trails={JSON.stringify(trails)}
+    data-trails={serializedData}
   >
   </div>
 </Layout>
