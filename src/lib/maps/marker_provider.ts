@@ -18,7 +18,12 @@ export class MarkerProvider {
       const { id, title, startLatLng, gpxFile } = trail
 
       const popupContent = `<a href="/trails/${id}">${title}</a>`
-      const marker = L.marker(startLatLng, { icon }).bindPopup(popupContent)
+      const popup = L.popup({
+        content: popupContent,
+        offset: [0, -50],
+        closeButton: false,
+      })
+      const marker = L.marker(startLatLng, { icon }).bindPopup(popup)
 
       let gpx: L.GPX | undefined
       marker.on('popupopen', async () => {

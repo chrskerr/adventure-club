@@ -10,6 +10,8 @@ export class PolylineProvider {
     return this.promisify(
       new L.GPX(url, {
         async: true,
+        // @ts-expect-error
+        markers: { startIcon: undefined, endIcon: undefined },
         polyline_options: { color: 'var(--color-sky-600)' },
       }),
     )
