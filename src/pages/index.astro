@@ -3,26 +3,33 @@ import config from '@/config'
 import { getCollection } from 'astro:content'
 
 import Base from '@/layouts/base.astro'
-import PostPreview from '@/components/post_preview.astro'
 
-const allPosts = await getCollection('posts')
-const sortedPosts = allPosts.sort(
-  (a, b) =>
-    new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf(),
-)
+const allTrails = await getCollection('trails')
+const allEvents = await getCollection('events')
+const allFeeds = await getCollection('activity_feed_items')
 ---
 
 <Base meta={{ title: config.title }}>
+  <h2>Trails</h2>
   <div class="w700:grid-cols-1 grid grid-cols-2 gap-5">
     {
-      sortedPosts.map((post) => (
-        <PostPreview
-          url={post.id}
-          title={post.data.title}
-          description={post.data.description}
-          pubDate={post.data.pubDate}
-        />
+      allTrails.map((post) => (
+        <a href={'/trails' + post.id}>{post.data.title}</a>
       ))
     }
+  </div>
+
+  <h2>Events</h2>
+  <div class="w700:grid-cols-1 grid grid-cols-2 gap-5">
+    {
+      allEvents.map((post) => (
+        <a href={'/events' + post.id}>{post.data.date}</a>
+      ))
+    }
+  </div>
+
+  <h2>Feeds</h2>
+  <div class="w700:grid-cols-1 grid grid-cols-2 gap-5">
+    {allFeeds.map((post) => <a href={post.id}>{post.data.date}</a>)}
   </div>
 </Base>
