@@ -1,35 +1,27 @@
 ---
+export const prerender = false
+
 import config from '@/config'
 import { getCollection } from 'astro:content'
 
 import Base from '@/layouts/base.astro'
-
-const allTrails = await getCollection('trails')
-const allEvents = await getCollection('events')
-const allFeeds = await getCollection('activityFeedItems')
+import AllTrailsMap from '@/components/maps/all_trails.astro'
+import UpcomingEvents from '@/components/events/upcoming.astro'
 ---
 
 <Base meta={{ title: config.title }}>
-  <h2>Trails</h2>
-  <div class="w700:grid-cols-1 grid grid-cols-2 gap-5">
-    {
-      allTrails.map((post) => (
-        <a href={'/trails/' + post.id}>{post.data.title}</a>
-      ))
-    }
-  </div>
+  <section class="mb-12">
+    <h2 class="mb-4 text-2xl font-bold">Upcoming events</h2>
+    <UpcomingEvents />
+  </section>
 
-  <h2>Events</h2>
-  <div class="w700:grid-cols-1 grid grid-cols-2 gap-5">
-    {
-      allEvents.map((post) => (
-        <a href={'/events/' + post.id}>{post.data.date}</a>
-      ))
-    }
-  </div>
+  <section class="mb-12">
+    <h2 class="mb-4 text-2xl font-bold">Recent Feed</h2>
+    <p>COMING SOON</p>
+  </section>
 
-  <h2>Feeds</h2>
-  <div class="w700:grid-cols-1 grid grid-cols-2 gap-5">
-    {allFeeds.map((post) => <p>{post.data.date}</p>)}
-  </div>
+  <section>
+    <h2 class="mb-4 text-2xl font-bold">Trails</h2>
+    <AllTrailsMap />
+  </section>
 </Base>

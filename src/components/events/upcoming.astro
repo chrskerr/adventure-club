@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content'
+
+const [upcomingEvents, trails] = await Promise.all([
+  getCollection('events'),
+  getCollection('trails'),
+])
+
+const trailsMap = new Map(trails.map((trail) => [trail.id, trail]))
+
+const events = upcomingEvents
+  .map((event) => {
+    const trail = trailsMap.get(event.data.trailId)
+    if (trail == null) {
+      throw new Error(`Trail with ID ${event.data.trailId} not found`)
+    }
+
+    return {
+      ...event,
+      date: new Date(event.data.date + 'T' + event.data.time),
+      trail,
+    }
+  })
+  .filter((event) => event.date > new Date())
+---
+
+<div class="grid grid-cols-2 gap-8">
+  {
+    events.map((event) => (
+      <div class="rounded-base border-2 border-black bg-white p-4">
+        <h3 class="mb-4 text-xl font-bold">{event.trail.data.title}</h3>
+        <p class="mb-4">
+          {event.date.toLocaleTimeString('en-AU')} on{' '}
+          {event.date.toDateString()}
+        </p>
+        <a href={`/trails/${event.trail.id}`} class="underline">
+          Trail details
+        </a>
+      </div>
+    ))
+  }
+</div>

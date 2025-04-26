@@ -1,60 +1,8 @@
 ---
-import { getCollection } from 'astro:content'
-import 'leaflet/dist/leaflet.css'
-
 import Layout from '@/layouts/base.astro'
-import { MapDataProvider } from '@/lib/maps/data_provider'
-
-const mapDataProvider = new MapDataProvider()
-const trailsCollection = await getCollection('trails')
-const serializedData = mapDataProvider.serializeData({ trailsCollection })
+import AllTrailsMap from '@/components/maps/all_trails.astro'
 ---
 
-<script>
-  import { MapCreator } from '@/lib/maps/create'
-  import { IconProvider } from '@/lib/maps/icon_provider'
-  import { MapDataProvider } from '@/lib/maps/data_provider'
-  import { MarkerProvider } from '@/lib/maps/marker_provider'
-  import { PolylineProvider } from '@/lib/maps/polyline_provider'
-
-  const trailsJson = document.getElementById('map')?.getAttribute('data-trails')
-  if (trailsJson == null) {
-    throw new Error('data-trails attribute not set')
-  }
-
-  const mapDataProvider = new MapDataProvider()
-  const trailsData = mapDataProvider.deserializeData(trailsJson)
-
-  const mapCreator = new MapCreator()
-  const map = mapCreator.createMap({ targetDivId: 'map' })
-
-  const iconProvider = new IconProvider()
-  const polylineProvider = new PolylineProvider()
-  const markerProvider = new MarkerProvider(
-    trailsData,
-    map,
-    iconProvider,
-    polylineProvider,
-  )
-
-  const markers = markerProvider.getMarkers()
-  markers.forEach((marker) => marker.addTo(map))
-
-  const bounds = markerProvider.getMarkerBounds()
-  map.fitBounds(bounds)
-</script>
-
 <Layout meta={{ title: 'All trails' }}>
-  <div
-    class="rounded-base -z-0 h-[500px] border-2 border-black"
-    id="map"
-    data-trails={serializedData}
-  >
-  </div>
+  <AllTrailsMap />
 </Layout>
-
-<style is:global>
-  .leaflet-popup-tip-container {
-    display: none;
-  }
-</style>
