@@ -20,5 +20,14 @@ const { Content } = await render(entry)
   <h2 class="my-0 w-max text-4xl">
     {entry.data.title}
   </h2>
+  <ul>
+    <li><span class="font-bold">Region:</span> {entry.data.region}</li>
+    <li><span class="font-bold">Distance:</span> {entry.data.distanceKm}km</li>
+    <li>
+      <span class="font-bold">Elevation gain:</span>
+      {entry.data.elevationGainM}m
+    </li>
+    <li><span class="font-bold">Type:</span> {entry.data.type}</li>
+  </ul>
   <Content />
 </Layout>

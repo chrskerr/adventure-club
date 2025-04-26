@@ -9,7 +9,7 @@ const trails = defineCollection({
     summary: z.string(),
     tileImage: z.string().optional(), // how do we make this work??
 
-    region: z.enum(['South East']),
+    region: z.enum(['South East', 'South', 'Hobart']),
     startLatLng: z.tuple([z.number(), z.number()]),
 
     distanceKm: z.number().gt(0),
