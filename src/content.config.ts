@@ -1,6 +1,5 @@
 import { z, defineCollection } from 'astro:content'
 import { glob } from 'astro/loaders'
-import { date } from 'astro:schema'
 
 const trails = defineCollection({
   loader: glob({ pattern: '**/*.mdx', base: './src/content/trails' }),

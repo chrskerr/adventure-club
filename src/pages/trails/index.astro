@@ -37,6 +37,12 @@ const trails = allTrails.map<TrailData>((trail) => ({
   let minLng = -Infinity
   let maxLng = Infinity
 
+  L.Icon.Default.mergeOptions({
+    iconRetinaUrl: '/images/marker-icon-2x.png',
+    iconUrl: '/images/marker-icon.png',
+    shadowUrl: '/images/marker-shadow.png',
+  })
+
   for (const {
     id,
     title,
@@ -76,7 +82,7 @@ const trails = allTrails.map<TrailData>((trail) => ({
 
 <Layout meta={{ title: 'All trails' }}>
   <div
-    class="rounded-base h-[500px] border-2 border-black"
+    class="rounded-base -z-0 h-[500px] border-2 border-black"
     id="map"
     data-trails={JSON.stringify(trails)}
   >
