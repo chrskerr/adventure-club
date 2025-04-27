@@ -1,7 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content'
 
-import Layout from '@/layouts/markdown_page.astro'
+import Layout from '@/layouts/base.astro'
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('events')
@@ -16,6 +16,6 @@ const { entry } = Astro.props
 const { Content } = await render(entry)
 ---
 
-<Layout title={entry.data.date}>
+<Layout meta={{ title: entry.data.date }}>
   <Content />
 </Layout>

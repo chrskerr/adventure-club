@@ -1,7 +1,11 @@
 ---
 import Layout from '@/layouts/base.astro'
+import UpcomingEvents from '@/components/events/upcoming.astro'
 ---
 
 <Layout meta={{ title: 'Upcoming events' }}>
-  <p>TODO</p>
+  <h2>Upcoming Events</h2>
+  <div class="grid md:grid-cols-2">
+    <UpcomingEvents />
+  </div>
 </Layout>

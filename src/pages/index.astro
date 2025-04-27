@@ -7,21 +7,53 @@ import { getCollection } from 'astro:content'
 import Base from '@/layouts/base.astro'
 import AllTrailsMap from '@/components/maps/all_trails.astro'
 import UpcomingEvents from '@/components/events/upcoming.astro'
+
+import kateGoat from '@/assets/common/kate_goat.jpeg'
+import { Image } from 'astro:assets'
 ---
 
 <Base meta={{ title: config.title }}>
-  <section class="mb-12">
-    <h2 class="mb-4 text-2xl font-bold">Upcoming events</h2>
-    <UpcomingEvents />
-  </section>
+  <div class="grid max-w-full md:grid-cols-3 md:gap-6 lg:gap-12">
+    <div class="md:col-span-2">
+      <Image
+        src={kateGoat}
+        alt="Kate holding a Goat"
+        class="rounded-base float-right mt-[50px] ml-12 aspect-square object-cover object-top md:hidden"
+        width={200}
+        densities={[1, 2, 3]}
+      />
 
-  <section class="mb-12">
-    <h2 class="mb-4 text-2xl font-bold">Recent Feed</h2>
-    <p>COMING SOON</p>
-  </section>
+      <h2>What is the Adventure Club</h2>
+      <p>
+        The Adventure Club is all about making the most of the amazing nature
+        that Tasmania has to offer through our passion for trail running, and
+        making some new friends while doing it!
+      </p>
 
-  <section>
-    <h2 class="mb-4 text-2xl font-bold">Trails</h2>
-    <AllTrailsMap />
-  </section>
+      <p>
+        We welcome all levels of experience and skill, from beginners to
+        experienced adventurers, as long as you are up to the difficulty of the
+        trail.
+      </p>
+
+      <h2>Recent Feed</h2>
+      <p>COMING SOON</p>
+    </div>
+
+    <aside>
+      <Image
+        src={kateGoat}
+        alt="Kate holding a Goat"
+        class="rounded-base hidden aspect-square object-cover object-top md:block"
+        widths={[200, 400, 600, 800]}
+        sizes="33vw"
+      />
+
+      <h2>Upcoming events</h2>
+      <UpcomingEvents />
+    </aside>
+  </div>
+
+  <h2>All trails</h2>
+  <AllTrailsMap />
 </Base>

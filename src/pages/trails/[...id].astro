@@ -1,7 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content'
 
-import Layout from '@/layouts/markdown_page.astro'
+import Layout from '@/layouts/base.astro'
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('trails')
@@ -16,8 +16,8 @@ const { entry } = Astro.props
 const { Content } = await render(entry)
 ---
 
-<Layout title={entry.data.title}>
-  <h2 class="my-0 w-max text-4xl">
+<Layout meta={{ title: entry.data.title }}>
+  <h2>
     {entry.data.title}
   </h2>
   <ul>
