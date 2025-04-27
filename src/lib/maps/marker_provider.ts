@@ -27,9 +27,9 @@ export class MarkerProvider {
 
       let gpx: L.GPX | undefined
       marker.on('popupopen', async () => {
-        if (trail.gpxFile) {
+        if (gpxFile) {
           if (gpx == null) {
-            gpx = await this.polylineProvider.fromGpxUrl(trail.gpxFile)
+            gpx = await this.polylineProvider.fromGpxUrl(gpxFile)
           }
           gpx.addTo(this.map)
         }
