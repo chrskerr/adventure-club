@@ -11,5 +11,5 @@ export default defineConfig({
   vite: { plugins: [tailwindcss()] },
   integrations: [react(), mdx()],
   site: 'https://www.adventure-club.com.au/',
-  adapter: cloudflare(),
+  adapter: cloudflare({ imageService: 'cloudflare' }),
 })
