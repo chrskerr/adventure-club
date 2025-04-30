@@ -11,6 +11,20 @@ elevationGainM: 1260
 type: 'Loop'
 ---
 
+import ImageCarousel from '@/components/images/image_carousel.astro'
+import { CarouselItem } from '@/components/carousel'
+import ImageCard from '@/components/images/image_card.astro'
+import image1 from '@/assets/snakes/1.jpg'
+import image2 from '@/assets/snakes/2.jpg'
+import image3 from '@/assets/snakes/3.jpg'
+import image4 from '@/assets/snakes/4.jpg'
+import image5 from '@/assets/snakes/5.jpg'
+import image6 from '@/assets/snakes/6.jpg'
+import image7 from '@/assets/snakes/7.jpg'
+import image8 from '@/assets/snakes/8.jpeg'
+import image9 from '@/assets/snakes/9.jpeg'
+import image10 from '@/assets/snakes/10.jpeg'
+
 ## Summary
 
 This adventure turned out to be a beast! Overall kms and elevation are solid, however the real challenge to this adventure is the technical terrain. This made it slow, but also for us very very fun! If you enjoy technical trail running and a huge variety of terrain, then this adventure is definitely for you. If you are less confident with technical terrain, you'll be in for a long walk without much running. Adjust your expectations of duration accordingly and take adequate clothing, food and water.
@@ -18,6 +32,12 @@ This adventure turned out to be a beast! Overall kms and elevation are solid, ho
 Throughout this adventure you will see it all - spectacular 360 views from the top of the major climb, river crossings, a beautiful mix of landscapes, and a few kms of rock hopping towards the end (there will be literally nothing but boulders on the side of the mountain in sight - we had never seen anything like it before, was pretty incredible).
 
 **GPX file**: Available through <a target="_blank" href="https://www.wildertrails.com.au/explore-wilder-trails/snakes-and-ladders">Wilder Trails</a> for $5. They're a great organisation to support!
+
+<ImageCard
+  src={image1}
+  alt="runner in bushland"
+  caption="A day of epic adventure"
+/>
 
 ## Practical information
 
@@ -33,6 +53,12 @@ Throughout this adventure you will see it all - spectacular 360 views from the t
 
 **Fees and registration**: No fees. No walkers log book either.
 
+<ImageCard
+  src={image2}
+  alt="view of boulders"
+  caption="The 'Potato Fields' - a very very large rock garden"
+/>
+
 ## Adventure description
 
 She was a big one! We tackled this route after discovering it on Wilder Trails. Wilder Trails has the GPX route available for purchase for AUD$5 for those wishing to download the route. There are a few turns along the course that are easy to miss as they are secondary trails rather than the more commonly trod routes, so the GPX file downloaded to our Garmin was a massive help.
@@ -43,11 +69,36 @@ You'll go through a few distinct sections along this adventure:
 - Really fun single track that opens up out of the forest - you're running on compact dirt with a trench in the middle. This was super fun, it almost felt like we were parkour running, as you end up jumping off either side of the trail to avoid the trench (it's not deep, maybe 50cm, so pretty safe)
 - Wide firetrail for a few kms - the cruisiest bit of the day by far!
 - River crossings - when you do the first river crossing please note that the track down to the river is VERY easy to miss. Highly recommend keeping an eye on the GPS for this bit. The track on the other side of the river is more or less directly opposite the track you've taken to get down (just a little bit to the right).
+
+<ImageCard
+  src={image5}
+  alt="woman running past stream"
+  caption="One of the river crossings along the way..."
+/>
+
 - Once you've crossed the river you'll then start climbing UP. It's steep, but nice smooth track for the majority of the climb.
 - Just before the top you'll have a bit more of a scramble, before getting out to the top with absolutely spectacular 360 views.
 - It's then time to cross the ridgeline, this was really fun. We took it slowly as it was fairly challenging.
 - From here on the trail is pretty damn technical. Beautiful terrain, but not easy running at all.
+
+<ImageCard
+  src={image10}
+  alt="nature view"
+  caption="Views from somewhere near the top"
+/>
+
 - Eventually you'll get to the rock garden section (called the 'Potato fields'), which was really beautiful, if not very slow going. It felt like 2-3kms of pure rock hopping.
 - Before you then rejoin the first little bit of the trail that you set out down. And you can finally run again back to the car, hooray!
 
 Overall this was a pretty epic adventure. It was hard to believe that this rugged trail exists so close to Hobart city centre. Was a great day out.
+
+<ImageCarousel
+  images={[
+    { src: image6, alt: 'woman in bushland', caption: 'Getting technical' },
+    { src: image3, alt: 'woman running across boulders' },
+    { src: image4, alt: 'woman standing in bushland' },
+    { src: image7, alt: 'woman running past boulder' },
+    { src: image8, alt: 'mushrooms growing on moss' },
+    { src: image9, alt: 'view of mountains' },
+  ]}
+/>
