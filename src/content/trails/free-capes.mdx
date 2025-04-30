@@ -16,9 +16,22 @@ import GarminEmbed from '@/components/garmin_embed.astro'
 
 <GarminEmbed src="https://connect.garmin.com/modern/course/embed/343617091" />
 
+import ImageCard from '@/components/image_card.astro'
+import image1 from '@/assets/free_capes/1.jpeg'
+import image2 from '@/assets/free_capes/2.jpeg'
+import image3 from '@/assets/free_capes/3.jpeg'
+import image4 from '@/assets/free_capes/4.jpeg'
+import image5 from '@/assets/free_capes/5.jpeg'
+
 ## Summary
 
 We wanted to be able to explore the amazing trail covered in the famous 'Three Capes' walk, without needing to wait for a spot or spending a decent whack of money to do so! Hence researching a way to run 2 of the 3 capes in one go with this 40km route. You will run through a mix of single track and boardwalks mostly, all very well maintained. Absolutely brilliant coastline, there's a reason this walk is as popular as it is!
+
+<ImageCard
+  src={image1}
+  alt="Kate hiking near cliff"
+  caption="Get ready for a big day of epic views"
+/>
 
 ## Practical information
 
@@ -30,4 +43,10 @@ We wanted to be able to explore the amazing trail covered in the famous 'Three C
 
 **Fees and registration**: Sign in using the walkers registration book at the start of the trail before getting going. You will need National Park pass to park here and complete this trail.
 
-## Adventure description
+<ImageCard src={image2} alt="Along the free capes walk" />
+
+<ImageCard src={image3} alt="Along the free capes walk" />
+
+<ImageCard src={image4} alt="Along the free capes walk" />
+
+<ImageCard src={image5} alt="Along the free capes walk" />
