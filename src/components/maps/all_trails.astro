@@ -6,7 +6,9 @@ import { MapDataProvider } from '@/lib/maps/data_provider'
 
 const mapDataProvider = new MapDataProvider()
 const trailsCollection = await getCollection('trails')
-const serializedData = mapDataProvider.serializeData({ trailsCollection })
+const serializedData = mapDataProvider.serializeData({
+  trailsCollection,
+})
 
 const { fullScreen = false } = Astro.props
 ---

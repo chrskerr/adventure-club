@@ -14,77 +14,45 @@ export class MarkerProvider {
 
   getMarkers(): L.Marker[] {
     const icon = this.iconProvider.createPinIcon()
+    const clickedIcon = this.iconProvider.createClickedPinIcon()
+
     return this.trailsData.map((trail) => {
       const { id, title, startLatLng, gpxFile, tileImage, distanceKm } = trail
 
       // Popup content with image, title, and distance
       const popupContent = `
-        <a href="/trails/${id}" class="trail-popup-link-box">
-          <div class="trail-popup-box">
-            <div class="trail-popup-img-container">
-              <img src="${tileImage || ''}" alt="${title}" class="trail-popup-img" />
-            </div>
-            <div class="trail-popup-content">
-              <div class="trail-popup-title">${title}</div>
-              <div class="trail-popup-distance">${distanceKm}km</div>
-            </div>
+        <a href="/trails/${id}">
+          <div class="w-[250px] border-2 border-black rounded-xl bg-white shadow-lg overflow-hidden p-0 m-0 flex flex-col no-underline text-black transition-colors duration-150 hover:bg-bg cursor-pointer"
+          style="color: #000 !important;"
+        >
+          <div class="w-full h-[120px] overflow-hidden flex-shrink-0">
+            <img src="${tileImage || ''}" alt="${title}" class="w-full h-full object-cover block" />
+          </div>
+          <div class="px-3 pt-2 pb-2 flex flex-col gap-1">
+            <div class="font-bold text-base truncate" title="${title}">${title}</div>
+            <div class="text-gray-500 text-[0.97rem] whitespace-nowrap">${distanceKm}km</div>
           </div>
         </a>
         <style>
-          .trail-popup-link-box {
-            display: block;
-            text-decoration: none;
-            color: inherit;
-            cursor: pointer;
+          .leaflet-popup-content-wrapper,
+          .leaflet-popup-content {
+            background: transparent !important;
+            box-shadow: none !important;
+            border: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
           }
-          .trail-popup-link-box:hover .trail-popup-box {
-            background: #f5f5f5;
+          .leaflet-popup-content {
+            width: auto !important;
+            min-width: 0 !important;
+            max-width: none !important;
           }
-          .trail-popup-box {
-            width: 300px;
-            border: 2px solid #000;
-            border-radius: 12px;
-            background: #fff;
-            box-shadow: 0 4px 16px 0 rgba(0,0,0,0.12);
-            overflow: hidden;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            transition: background 0.15s;
+          .leaflet-popup-tip {
+            display: none !important;
           }
-          .trail-popup-img-container {
-            width: 100%;
-            height: 120px;
-            overflow: hidden;
-            flex-shrink: 0;
-          }
-          .trail-popup-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-          }
-          .trail-popup-content {
-            padding: 10px 12px 8px 12px;
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-          }
-          .trail-popup-title {
-            font-weight: bold;
-            font-size: 1rem;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 100%;
-          }
-          .trail-popup-distance {
-            color: #888;
-            font-size: 0.95rem;
-            margin-top: 2px;
-            white-space: nowrap;
-            flex-shrink: 0;
+          .leaflet-popup-content a,
+          .leaflet-popup-content a:visited {
+            color: #000 !important;
           }
         </style>
       `
@@ -97,6 +65,8 @@ export class MarkerProvider {
 
       let gpx: L.GPX | undefined
       marker.on('popupopen', async () => {
+        marker.setIcon(clickedIcon)
+
         if (gpxFile) {
           if (gpx == null) {
             gpx = await this.polylineProvider.fromGpxUrl(gpxFile)
@@ -106,6 +76,8 @@ export class MarkerProvider {
       })
 
       marker.on('popupclose', () => {
+        marker.setIcon(icon)
+
         gpx?.remove()
         gpx = undefined
       })

@@ -20,7 +20,7 @@ export class MapDataProvider {
         title: trail.data.title,
         startLatLng: trail.data.startLatLng,
         gpxFile: trail.data.gpxFile,
-        tileImage: trail.data.tileImage,
+        tileImage: trail.data.tileImage?.src,
         distanceKm: trail.data.distanceKm,
       })),
     )

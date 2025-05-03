@@ -12,7 +12,7 @@ export class PolylineProvider {
         async: true,
         // @ts-expect-error
         markers: { startIcon: undefined, endIcon: undefined },
-        polyline_options: { color: 'var(--color-sky-600)' },
+        polyline_options: { color: 'black' },
       }),
     )
   }

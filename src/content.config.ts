@@ -3,19 +3,20 @@ import { glob } from 'astro/loaders'
 
 const trails = defineCollection({
   loader: glob({ pattern: '**/*.mdx', base: './src/content/trails' }),
-  schema: z.object({
-    title: z.string(),
-    summary: z.string(),
-    tileImage: z.string().optional(), // how do we make this work??
-    gpxFile: z.string().optional(),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      summary: z.string(),
+      tileImage: image().optional(),
+      gpxFile: z.string().optional(),
 
-    region: z.enum(['South East', 'South', 'Hobart', 'South West']),
-    startLatLng: z.tuple([z.number(), z.number()]),
+      region: z.enum(['South East', 'South', 'Hobart', 'South West']),
+      startLatLng: z.tuple([z.number(), z.number()]),
 
-    distanceKm: z.number().gt(0),
-    elevationGainM: z.number().gt(0),
-    type: z.string(),
-  }),
+      distanceKm: z.number().gt(0),
+      elevationGainM: z.number().gt(0),
+      type: z.string(),
+    }),
 })
 
 const activityFeedItems = defineCollection({
