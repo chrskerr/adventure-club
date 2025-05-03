@@ -3,6 +3,6 @@ import Layout from '@/layouts/base.astro'
 import AllTrailsMap from '@/components/maps/all_trails.astro'
 ---
 
-<Layout meta={{ title: 'All trails' }}>
-  <AllTrailsMap />
+<Layout meta={{ title: 'All trails' }} noMainWrapper={true}>
+  <AllTrailsMap fullScreen={true} />
 </Layout>

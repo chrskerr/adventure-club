@@ -5,6 +5,8 @@ export type TrailData = {
   title: string
   startLatLng: [number, number]
   gpxFile: string | undefined
+  tileImage?: string
+  distanceKm: number
 }
 export class MapDataProvider {
   serializeData({
@@ -18,6 +20,8 @@ export class MapDataProvider {
         title: trail.data.title,
         startLatLng: trail.data.startLatLng,
         gpxFile: trail.data.gpxFile,
+        tileImage: trail.data.tileImage,
+        distanceKm: trail.data.distanceKm,
       })),
     )
   }

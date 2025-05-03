@@ -7,6 +7,8 @@ import { MapDataProvider } from '@/lib/maps/data_provider'
 const mapDataProvider = new MapDataProvider()
 const trailsCollection = await getCollection('trails')
 const serializedData = mapDataProvider.serializeData({ trailsCollection })
+
+const { fullScreen = false } = Astro.props
 ---
 
 <script>
@@ -44,8 +46,10 @@ const serializedData = mapDataProvider.serializeData({ trailsCollection })
 </script>
 
 <div
-  class="rounded-base not-prose -z-0 h-[500px] border-2 border-black"
   id="map"
   data-trails={serializedData}
+  class={fullScreen
+    ? 'not-prose fixed inset-0 z-0 h-screen w-screen max-w-none m-0 p-0 border-none rounded-none'
+    : 'rounded-base not-prose h-[500px] w-full max-w-[860px] mx-auto border-2 border-black'}
 >
 </div>
