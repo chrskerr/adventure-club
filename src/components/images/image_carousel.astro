@@ -1,5 +1,5 @@
 ---
-import { CarouselItem, ComposedCarousel } from '../carousel'
+import { ComposedCarousel } from '../carousel'
 import ImageCard from './image_card.astro'
 
 type Props = {
@@ -15,6 +15,6 @@ const { images } = Astro.props
 
 <div class="flex w-full flex-col items-center gap-4">
   <ComposedCarousel client:load>
-    {images.map(({ src, alt }, i) => <ImageCard src={src} alt={alt} />)}
+    {images.map(({ src, alt }) => <ImageCard src={src} alt={alt} />)}
   </ComposedCarousel>
 </div>
