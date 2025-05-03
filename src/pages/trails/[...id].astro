@@ -83,7 +83,11 @@ const ICON_CLASS = 'not-prose object-contain'
             class={ICON_CLASS}
           />
           <span class="font-bold">GPX File:</span>{' '}
-          <a href={entry.data.gpxFile} class="text-blue-600 hover:underline">
+          <a
+            href={entry.data.gpxFile}
+            target="_blank"
+            class="text-blue-600 hover:underline"
+          >
             Download GPX
           </a>
         </div>
