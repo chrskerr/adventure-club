@@ -10,7 +10,7 @@ const serializedData = mapDataProvider.serializeData({ trailsCollection })
 ---
 
 <script>
-  import { MapCreator } from '@/lib/maps/create'
+  import { MapInstaller } from '@/lib/maps/installer'
   import { IconProvider } from '@/lib/maps/icon_provider'
   import { MapDataProvider } from '@/lib/maps/data_provider'
   import { MarkerProvider } from '@/lib/maps/marker_provider'
@@ -24,8 +24,8 @@ const serializedData = mapDataProvider.serializeData({ trailsCollection })
   const mapDataProvider = new MapDataProvider()
   const trailsData = mapDataProvider.deserializeData(trailsJson)
 
-  const mapCreator = new MapCreator()
-  const map = mapCreator.createMap({ targetDivId: 'map' })
+  const mapInstaller = new MapInstaller()
+  const map = mapInstaller.installMap({ targetDivId: 'map' })
 
   const iconProvider = new IconProvider()
   const polylineProvider = new PolylineProvider()
@@ -33,7 +33,7 @@ const serializedData = mapDataProvider.serializeData({ trailsCollection })
     trailsData,
     map,
     iconProvider,
-    polylineProvider,
+    polylineProvider
   )
 
   const markers = markerProvider.getMarkers()
@@ -44,14 +44,8 @@ const serializedData = mapDataProvider.serializeData({ trailsCollection })
 </script>
 
 <div
-  class="rounded-base -z-0 h-[500px] border-2 border-black"
+  class="rounded-base not-prose -z-0 h-[500px] border-2 border-black"
   id="map"
   data-trails={serializedData}
 >
 </div>
-
-<style is:global>
-  .leaflet-popup-tip-container {
-    display: none;
-  }
-</style>

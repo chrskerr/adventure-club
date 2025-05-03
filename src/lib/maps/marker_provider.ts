@@ -20,7 +20,7 @@ export class MarkerProvider {
       const popupContent = `<a href="/trails/${id}">${title}</a>`
       const popup = L.popup({
         content: popupContent,
-        offset: [0, -50],
+        offset: [0, -20],
         closeButton: false,
       })
       const marker = L.marker(startLatLng, { icon }).bindPopup(popup)

@@ -1,7 +1,7 @@
 import L from 'leaflet'
 
-export class MapCreator {
-  createMap({ targetDivId }: { targetDivId: string }): L.Map {
+export class MapInstaller {
+  installMap({ targetDivId }: { targetDivId: string }): L.Map {
     const map = L.map(targetDivId)
       .setMaxBounds([
         [-45, 144],

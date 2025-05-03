@@ -6,8 +6,9 @@ export class IconProvider {
   createPinIcon() {
     return L.icon({
       iconUrl: locationPin,
-      iconSize: [40, 48],
-      iconAnchor: [15, 30],
+      iconSize: [26 * mult, 40 * mult],
+      iconAnchor: [13 * mult, 40 * mult],
     })
   }
 }
+const mult = 0.75
