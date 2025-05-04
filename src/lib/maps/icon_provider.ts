@@ -1,5 +1,3 @@
-import L from 'leaflet'
-
 import locationPin from '../../assets/icons/location_pin.svg?url'
 import locationPinClicked from '../../assets/icons/location_pin_clicked.svg?url'
 
@@ -11,18 +9,20 @@ const TARGET_HEIGHT = (BASE_HEIGHT / BASE_WIDTH) * TARGET_WIDTH
 
 export class IconProvider {
   createPinIcon() {
-    return L.icon({
-      iconUrl: locationPin,
-      iconSize: [TARGET_WIDTH, TARGET_HEIGHT],
-      iconAnchor: [TARGET_WIDTH / 2, TARGET_HEIGHT],
-    })
+    // Return the URL instead of a Leaflet icon
+    return {
+      url: locationPin,
+      width: TARGET_WIDTH,
+      height: TARGET_HEIGHT,
+    }
   }
 
   createClickedPinIcon() {
-    return L.icon({
-      iconUrl: locationPinClicked,
-      iconSize: [TARGET_WIDTH, TARGET_HEIGHT],
-      iconAnchor: [TARGET_WIDTH / 2, TARGET_HEIGHT],
-    })
+    // Return the URL instead of a Leaflet icon
+    return {
+      url: locationPinClicked,
+      width: TARGET_WIDTH,
+      height: TARGET_HEIGHT,
+    }
   }
 }

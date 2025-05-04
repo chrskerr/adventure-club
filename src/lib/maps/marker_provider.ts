@@ -1,25 +1,41 @@
-import L from 'leaflet'
+import maplibregl from 'maplibre-gl'
 
 import type { TrailData } from './data_provider'
 import type { IconProvider } from './icon_provider'
 import type { PolylineProvider } from './polyline_provider'
 
 export class MarkerProvider {
+  private markers: {
+    marker: maplibregl.Marker
+    popup: maplibregl.Popup
+    gpx?: any
+  }[] = []
+
   constructor(
     private readonly trailsData: TrailData[],
-    private readonly map: L.Map,
+    private readonly map: maplibregl.Map,
     private readonly iconProvider: IconProvider,
     private readonly polylineProvider: PolylineProvider,
   ) {}
 
-  getMarkers(): L.Marker[] {
-    const icon = this.iconProvider.createPinIcon()
-    const clickedIcon = this.iconProvider.createClickedPinIcon()
+  getMarkers(): maplibregl.Marker[] {
+    const iconData = this.iconProvider.createPinIcon()
+    const clickedIconData = this.iconProvider.createClickedPinIcon()
 
-    return this.trailsData.map((trail) => {
+    this.markers = this.trailsData.map((trail) => {
       const { id, title, startLatLng, gpxFile, tileImage, distanceKm } = trail
 
-      // Popup content with image, title, and distance
+      // Create an HTML element for the marker
+      const el = document.createElement('div')
+      el.style.backgroundImage = `url(${iconData.url})`
+      el.style.width = `${iconData.width}px`
+      el.style.height = `${iconData.height}px`
+      el.style.backgroundSize = 'contain'
+      el.style.backgroundRepeat = 'no-repeat'
+      el.style.backgroundPosition = 'center'
+      el.style.cursor = 'pointer'
+
+      // Popup content
       const popupContent = `
         <a href="/trails/${id}">
           <div class="w-[250px] border-2 border-black rounded-xl bg-white shadow-lg overflow-hidden p-0 m-0 flex flex-col no-underline text-black transition-colors duration-150 hover:bg-bg cursor-pointer"
@@ -34,76 +50,61 @@ export class MarkerProvider {
           </div>
         </a>
         <style>
-          .leaflet-popup-content-wrapper,
-          .leaflet-popup-content {
+          .maplibregl-popup-content {
             background: transparent !important;
             box-shadow: none !important;
             border: none !important;
             padding: 0 !important;
             margin: 0 !important;
           }
-          .leaflet-popup-content {
-            width: auto !important;
-            min-width: 0 !important;
-            max-width: none !important;
-          }
-          .leaflet-popup-tip {
+          .maplibregl-popup-tip {
             display: none !important;
           }
-          .leaflet-popup-content a,
-          .leaflet-popup-content a:visited {
+          a, a:visited {
             color: #000 !important;
           }
         </style>
       `
-      const popup = L.popup({
-        content: popupContent,
+
+      // Create popup but don't attach it yet
+      const popup = new maplibregl.Popup({
         offset: [0, -20],
         closeButton: false,
-      })
-      const marker = L.marker(startLatLng, { icon }).bindPopup(popup)
+        maxWidth: 'none',
+      }).setHTML(popupContent)
 
-      let gpx: L.GPX | undefined
-      marker.on('popupopen', async () => {
-        marker.setIcon(clickedIcon)
+      // Create marker - note the coordinate order change [lng, lat]
+      const marker = new maplibregl.Marker(el)
+        .setLngLat([startLatLng[1], startLatLng[0]])
+        .setPopup(popup)
+        .addTo(this.map)
 
-        if (gpxFile) {
-          if (gpx == null) {
-            gpx = await this.polylineProvider.fromGpxUrl(gpxFile)
-          }
-          gpx.addTo(this.map)
+      let gpx: any = undefined
+
+      // Custom event handlers for showing/hiding GPX track
+      marker.getElement().addEventListener('click', async () => {
+        // Change the marker icon when clicked
+        el.style.backgroundImage = `url(${clickedIconData.url})`
+
+        if (gpxFile && !gpx) {
+          gpx = await this.polylineProvider.fromGpxUrl(gpxFile)
+          gpx.add(this.map)
         }
       })
 
-      marker.on('popupclose', () => {
-        marker.setIcon(icon)
+      // When popup closes, reset the marker and remove GPX
+      popup.on('close', () => {
+        el.style.backgroundImage = `url(${iconData.url})`
 
-        gpx?.remove()
-        gpx = undefined
+        if (gpx) {
+          gpx.remove()
+          gpx = undefined
+        }
       })
 
-      return marker
+      return { marker, popup, gpx }
     })
-  }
 
-  getMarkerBounds(): L.LatLngBoundsExpression {
-    let minLat = -Infinity
-    let maxLat = Infinity
-    let minLng = -Infinity
-    let maxLng = Infinity
-
-    for (const {
-      startLatLng: [lat, lng],
-    } of this.trailsData) {
-      minLat = Math.max(minLat, lat)
-      maxLat = Math.min(maxLat, lat)
-      minLng = Math.max(minLng, lng)
-      maxLng = Math.min(maxLng, lng)
-    }
-
-    return [
-      [minLat, minLng],
-      [maxLat, maxLng],
-    ]
+    return this.markers.map((m) => m.marker)
   }
 }

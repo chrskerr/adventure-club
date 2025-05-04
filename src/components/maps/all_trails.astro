@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content'
-import 'leaflet/dist/leaflet.css'
+import 'maplibre-gl/dist/maplibre-gl.css'
 
 import { MapDataProvider } from '@/lib/maps/data_provider'
 
@@ -14,7 +14,9 @@ const { fullScreen = false } = Astro.props
 ---
 
 <script>
+  import maplibregl from 'maplibre-gl'
   import { MapInstaller } from '@/lib/maps/installer'
+  import { BoundsProvider } from '@/lib/maps/bounds_provider'
   import { IconProvider } from '@/lib/maps/icon_provider'
   import { MapDataProvider } from '@/lib/maps/data_provider'
   import { MarkerProvider } from '@/lib/maps/marker_provider'
@@ -28,23 +30,26 @@ const { fullScreen = false } = Astro.props
   const mapDataProvider = new MapDataProvider()
   const trailsData = mapDataProvider.deserializeData(trailsJson)
 
-  const mapInstaller = new MapInstaller()
+  const boundsProvider = new BoundsProvider(trailsData)
+  const bounds = boundsProvider.getMarkerBounds()
+
+  const mapInstaller = new MapInstaller(bounds)
   const map = mapInstaller.installMap({ targetDivId: 'map' })
 
   const iconProvider = new IconProvider()
   const polylineProvider = new PolylineProvider()
-  const markerProvider = new MarkerProvider(
-    trailsData,
-    map,
-    iconProvider,
-    polylineProvider,
-  )
 
-  const markers = markerProvider.getMarkers()
-  markers.forEach((marker) => marker.addTo(map))
+  // Wait for map to load before adding markers
+  map.on('load', () => {
+    const markerProvider = new MarkerProvider(
+      trailsData,
+      map,
+      iconProvider,
+      polylineProvider,
+    )
 
-  const bounds = markerProvider.getMarkerBounds()
-  map.fitBounds(bounds)
+    markerProvider.getMarkers()
+  })
 </script>
 
 <div
