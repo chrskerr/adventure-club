@@ -1,7 +1,25 @@
-"Always use spaces for indentation, with a width of 4 spaces"
-"Use camelCase for variable names"
-"Write unit tests for all new functions"
-"Explain your reasoning before providing code"
-"Focus on code readability and maintainability"
-"Prioritize using the most common library in the community"
-"When adding new features to websites, ensure they are responsive and accessible"
+1. File Organization:
+   - Group related functions together
+   - Place imports at the top of the file
+   - Order methods logically
+   - Group related files in logical folders
+   - Each file should be responsible for a single class or functions
+
+2. Technology requirements:
+   - Prefer typescript for new code
+   - Prefer tailwindcss for styling
+   - Prefer Astro components to React components, unless there is a compelling reason to use React components
+
+3. Coding standards
+   - Use meaningful names for variables and functions
+   - Keep functions short and focused
+   - Avoid unnecessary complexity
+   - Follow the DRY principle
+   - Use comments to explain complex logic
+   - Focus on code readability and maintainability
+   - Each UI component or function should have a clear purpose and be well-documented
+   - Split UI components and functions into smaller, reusable parts if their purpose is not clear or if they are too complex
+
+4. UX/UI standards
+   - Ensure all new features are accessible to all users
+   - Ensure all new features are responsive
