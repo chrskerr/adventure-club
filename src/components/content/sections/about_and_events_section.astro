@@ -1,0 +1,48 @@
+---
+import { Image } from 'astro:assets'
+import UpcomingEvents from '@/components/events/upcoming.astro'
+import kateGoat from '@/assets/common/kate_goat.jpeg' // Assuming kateGoat is specific to this section
+
+type Props = {
+  aboutContent: string // Or a more structured type if the content grows
+}
+
+const { aboutContent } = Astro.props
+---
+
+<div
+  class="prose prose-headings:font-heading prose-headings:text-text prose-a:text-text prose-blockquote:text-text prose-strong:text-text prose-ol:text-text prose-ul:text-text prose-table:text-text prose-tr:text-text prose-td:text-text w500:prose-h1:text-xl w500:prose-h2:text-lg w500:prose-h3:text-base w500:prose-h4:text-sm w500:prose-h5:text-sm w500:prose-h6:text-sm text-text w500:text-sm w500:leading-[2.2] w400:text-xs w400:leading-[2.2] w-full min-w-full leading-loose"
+>
+  <div class="grid max-w-full md:grid-cols-3 md:gap-6 lg:gap-12">
+    <div class="md:col-span-2">
+      <Image
+        src={kateGoat}
+        alt="Kate holding a Goat"
+        class="rounded-base float-right mt-[50px] ml-12 aspect-square object-cover object-top md:hidden"
+        width={200}
+        densities={[1, 2, 3]}
+      />
+
+      <h2>What is the Adventure Club</h2>
+      <p>
+        {aboutContent}
+      </p>
+
+      <h2>Recent Feed</h2>
+      <p>COMING SOON</p>
+    </div>
+
+    <aside>
+      <Image
+        src={kateGoat}
+        alt="Kate holding a Goat"
+        class="rounded-base hidden aspect-square object-cover object-top md:block"
+        widths={[200, 400, 600, 800]}
+        sizes="33vw"
+      />
+
+      <h2>Upcoming events</h2>
+      <UpcomingEvents />
+    </aside>
+  </div>
+</div>

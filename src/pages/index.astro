@@ -2,102 +2,31 @@
 export const prerender = false
 
 import config from '@/config'
-
-import Base from '@/layouts/base.astro'
-import AllTrailsMap from '@/components/maps/all_trails.astro'
-import UpcomingEvents from '@/components/events/upcoming.astro'
-import Footer from '@/components/footer.astro'
-
-import kateGoat from '@/assets/common/kate_goat.jpeg'
+import Layout from '@/layouts/full_width.astro'
 import heroImage from '@/assets/free_capes/1.jpeg'
-import { Image } from 'astro:assets'
+import HeroSection from '@/components/content/sections/hero_section.astro'
+import AboutAndEventsSection from '@/components/content/sections/about_and_events_section.astro'
+import AllTrailsSection from '@/components/content/sections/all_trails_section.astro'
+import MaxWidth from '@/components/ui/MaxWidth.astro'
+import Prose from '@/components/ui/Prose.astro'
 ---
 
-<Base meta={{ title: config.title }} noMainWrapper={true}>
-  <div class="relative h-screen w-full">
-    <Image
-      src={heroImage}
-      alt="Scenic view of Tasmania's trails"
-      class="absolute inset-0 h-full w-full object-cover"
-      widths={[400, 800, 1200, 1600, 2000]}
-      sizes="100vw"
-    />
-    <div
-      class="absolute inset-0 bg-gradient-to-tr from-black/80 via-black/50 to-transparent"
-    >
-    </div>
+<Layout meta={{ title: config.title }}>
+  <HeroSection
+    heroImage={heroImage}
+    title="Explore Tasmania's Trails Together"
+    description="Join our community of trail runners and adventurers as we discover Tasmania's breathtaking wilderness together. From beginners to experienced runners, everyone is welcome to be part of the journey."
+    ctaLink="/trails"
+    ctaText="Explore our trails"
+  />
 
-    <div class="absolute inset-0 flex items-center justify-start px-5 md:px-20">
-      <div class="max-w-2xl text-white">
-        <h1 class="font-heading mb-4 text-4xl md:text-6xl">
-          Explore Tasmania's Trails Together
-        </h1>
-        <p class="mb-8 text-lg md:text-xl">
-          Join our community of trail runners and adventurers as we discover
-          Tasmania's breathtaking wilderness together. From beginners to
-          experienced runners, everyone is welcome to be part of the journey.
-        </p>
-        <a
-          href="/trails"
-          class="bg-main hover:bg-main-accent text-text font-heading rounded-base shadow-light inline-block px-8 py-3 transition-colors"
-        >
-          Explore our trails
-        </a>
-      </div>
-    </div>
-  </div>
+  <MaxWidth>
+    <Prose>
+      <AboutAndEventsSection
+        aboutContent="The Adventure Club is all about making the most of the amazing nature that Tasmania has to offer through our passion for trail running, and making some new friends while doing it! We welcome all levels of experience and skill, from beginners to experienced adventurers, as long as you are up to the difficulty of the trail."
+      />
+    </Prose>
+  </MaxWidth>
 
-  <main class="bg-bg mx-auto max-w-[900px] px-5 py-16">
-    <div
-      class="prose prose-headings:font-heading prose-headings:text-text prose-a:text-text prose-blockquote:text-text prose-strong:text-text prose-ol:text-text prose-ul:text-text prose-table:text-text prose-tr:text-text prose-td:text-text w500:prose-h1:text-xl w500:prose-h2:text-lg w500:prose-h3:text-base w500:prose-h4:text-sm w500:prose-h5:text-sm w500:prose-h6:text-sm text-text w500:text-sm w500:leading-[2.2] w400:text-xs w400:leading-[2.2] w-full min-w-full leading-loose"
-    >
-      <div class="grid max-w-full md:grid-cols-3 md:gap-6 lg:gap-12">
-        <div class="md:col-span-2">
-          <Image
-            src={kateGoat}
-            alt="Kate holding a Goat"
-            class="rounded-base float-right mt-[50px] ml-12 aspect-square object-cover object-top md:hidden"
-            width={200}
-            densities={[1, 2, 3]}
-          />
-
-          <h2 class="mt-0">What is the Adventure Club</h2>
-          <p>
-            The Adventure Club is all about making the most of the amazing
-            nature that Tasmania has to offer through our passion for trail
-            running, and making some new friends while doing it!
-          </p>
-
-          <p>
-            We welcome all levels of experience and skill, from beginners to
-            experienced adventurers, as long as you are up to the difficulty of
-            the trail.
-          </p>
-
-          <h2>Recent Feed</h2>
-          <p>COMING SOON</p>
-        </div>
-
-        <aside>
-          <Image
-            src={kateGoat}
-            alt="Kate holding a Goat"
-            class="rounded-base hidden aspect-square object-cover object-top md:block"
-            widths={[200, 400, 600, 800]}
-            sizes="33vw"
-          />
-
-          <h2>Upcoming events</h2>
-          <UpcomingEvents />
-        </aside>
-      </div>
-
-      <h2>All trails</h2>
-      <div class="md:col-span-2">
-        <AllTrailsMap />
-      </div>
-
-      <Footer />
-    </div>
-  </main>
-</Base>
+  <AllTrailsSection />
+</Layout>

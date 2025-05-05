@@ -1,8 +1,8 @@
 ---
-import Layout from '@/layouts/base.astro'
+import Layout from '@/layouts/full_width.astro'
 import AllTrailsMap from '@/components/maps/all_trails.astro'
 ---
 
-<Layout meta={{ title: 'All trails' }} noMainWrapper={true}>
+<Layout meta={{ title: 'All trails' }}>
   <AllTrailsMap fullScreen={true} />
 </Layout>

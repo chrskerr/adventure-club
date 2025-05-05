@@ -1,0 +1,44 @@
+---
+import { Image } from 'astro:assets'
+
+type Props = {
+  heroImage: ImageMetadata
+  title: string
+  description: string
+  ctaLink: string
+  ctaText: string
+}
+
+const { heroImage, title, description, ctaLink, ctaText } = Astro.props
+---
+
+<div class="relative h-screen w-full">
+  <Image
+    src={heroImage}
+    alt="Scenic view of Tasmania's trails"
+    class="absolute inset-0 h-full w-full object-cover"
+    widths={[400, 800, 1200, 1600, 2000]}
+    sizes="100vw"
+  />
+  <div
+    class="absolute inset-0 bg-gradient-to-tr from-black/80 via-black/50 to-transparent"
+  >
+  </div>
+
+  <div class="absolute inset-0 flex items-center justify-start px-5 md:px-20">
+    <div class="max-w-2xl text-white">
+      <h1 class="font-heading mb-4 text-4xl md:text-6xl">
+        {title}
+      </h1>
+      <p class="mb-8 text-lg md:text-xl">
+        {description}
+      </p>
+      <a
+        href={ctaLink}
+        class="bg-main hover:bg-main-accent text-text font-heading rounded-base shadow-light inline-block px-8 py-3 transition-colors"
+      >
+        {ctaText}
+      </a>
+    </div>
+  </div>
+</div>

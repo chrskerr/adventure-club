@@ -5,7 +5,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react'
 
 import * as React from 'react'
 
-import { Button } from '@/components/button'
+import { Button } from '@/components/ui/button'
 
 import { cn } from '@/lib/utils'
 
@@ -241,25 +241,22 @@ function CarouselNext({
   )
 }
 
-function ComposedCarousel({ children }: { children: React.ReactNode }) {
-  const ref = React.useRef<HTMLDivElement>(null)
-  const [images, setImages] = React.useState<string[]>([])
+type ImageData = {
+  src: string
+  alt: string
+  caption?: string
+}
 
-  React.useEffect(() => {
-    const images = [...(ref.current?.children[0].children || [])]
-    setImages(images.map((image) => image.outerHTML))
-  }, [])
-
+function ComposedCarousel({ images }: { images: ImageData[] }) {
   return (
     <div className="px-20">
       <Carousel className="w-full">
-        <div ref={ref} className="hidden">
-          {children}
-        </div>
         <CarouselContent>
-          {images.map((images, key) => (
+          {images.map((image, key) => (
             <CarouselItem key={key}>
-              <span dangerouslySetInnerHTML={{ __html: images }} />
+              {/* Render the image directly */}
+              <img src={image.src} alt={image.alt} />
+              {image.caption && <p>{image.caption}</p>} {/* Optional caption */}
             </CarouselItem>
           ))}
         </CarouselContent>
