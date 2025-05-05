@@ -21,7 +21,7 @@
    - Split UI components and functions into smaller, reusable parts if their purpose is not clear or if they are too complex
    - When making changes, consider the complete context of all files before determining the next steps
    - Refactor existing code to match the new requirements and ensure that the other coding standards remain met
-   - Do not allow technical determining
+   - Always cleanup and remove unused imports
 
 4. UX/UI standards
    - Ensure all new features are accessible to all users
